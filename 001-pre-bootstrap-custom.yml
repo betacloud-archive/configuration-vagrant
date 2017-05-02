@@ -1,0 +1,24 @@
+# This file is subject to the terms and conditions defined in file 'LICENSE',
+# which is part of this repository.
+---
+# NO CHANGE OVER THIS LINE
+###############################################################################
+
+# Customer-specific plays can be placed here.
+
+- hosts: all
+  tasks:
+  - name: Copy rc.local file
+    copy:
+      src: rc.local
+      dest: /etc/init.d/rc.local
+      owner: root
+      group: root
+      mode: 0755
+    become: true
+
+  - name: Run rc.local script
+    command: /etc/init.d/rc.local
+    environment:
+      CREATE_LABELS: 1
+    become: true

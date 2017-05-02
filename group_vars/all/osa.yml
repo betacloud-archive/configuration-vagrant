@@ -1,0 +1,24 @@
+---
+##########################
+# security hardening (openstack-ansible-security role)
+
+security_root_forward_email: vagrant@betacloud.io
+security_enable_chrony: yes
+security_rhel7_enable_chrony: yes
+security_ntp_servers:
+ - 0.de.pool.ntp.org
+ - 1.de.pool.ntp.org
+ - 2.de.pool.ntp.org
+ - 3.de.pool.ntp.org
+security_allowed_ntp_subnets:
+  - 127.0.0.1/32
+security_disable_module_usb_storage: yes
+security_umask_daemons_init: 027
+security_umask_login_defs: 077
+security_umask_csh: 077
+
+# NOTE: http://docs.openstack.org/developer/kolla-ansible/security.html#selinux
+security_enable_linux_security_module: no
+security_rhel7_enable_linux_security_module: no
+
+security_rhel7_remove_shosts_files: yes

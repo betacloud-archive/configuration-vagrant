@@ -1,0 +1,6 @@
+---
+##########################
+# XenServer related roles
+
+- name: betacloud.xenserver
+  src: galaxy/betacloud.xenserver.tar.gz

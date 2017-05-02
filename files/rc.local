@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+
+# Create dummy loopback devices for ceph
+
+NUMBER=6
+SIZE_OSD=16384
+SIZE_JOURNAL=2048
+
+for n in $(seq 1 $NUMBER); do
+    osdfile=/opt/osd$n.img
+    journalfile=/opt/journal$n.img
+
+    if [[ ! -e $osdfile ]]; then
+        dd if=/dev/zero of=$osdfile bs=1MB count=$SIZE_OSD
+    fi
+
+    if [[ ! -e $journalfile ]]; then
+        dd if=/dev/zero of=$journalfile bs=1MB count=$SIZE_JOURNAL
+    fi
+
+    if [[ -z $(losetup -a | grep $osdfile) ]]; then
+        osddevice=$(losetup -f)
+        losetup $osddevice $osdfile
+        partprobe $osddevice
+        if [[ -n "$CREATE_LABELS" ]]; then
+            parted $osddevice -a optimal -s -- mklabel gpt mkpart KOLLA_CEPH_OSD_BOOTSTRAP_${n} 1 -1
+        fi
+    fi
+
+    if [[ -z $(losetup -a | grep $journalfile) ]]; then
+        journaldevice=$(losetup -f)
+        losetup $journaldevice $journalfile
+        partprobe $journaldevice
+        if [[ -n "$CREATE_LABELS" ]]; then
+            parted $journaldevice -a optimal -s -- mklabel gpt mkpart KOLLA_CEPH_OSD_BOOTSTRAP_${n}_J 1 -1
+        fi
+    fi
+done
+
+# Create dummy network device for neutron
+
+ip l a fake_interface type dummy || true
+
+exit 0

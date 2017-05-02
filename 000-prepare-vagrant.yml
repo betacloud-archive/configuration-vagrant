@@ -1,0 +1,27 @@
+# This file is subject to the terms and conditions defined in file 'LICENSE',
+# which is part of this repository.
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+  - name: Install vagrant
+    package:
+      name: vagrant
+      state: present
+
+  - name: Add virtualbox repository
+    apt_repository:
+      repo: deb http://download.virtualbox.org/virtualbox/debian xenial contrib
+      state: present
+
+  - name: Add virtualrepository gpg key
+    apt_key:
+      url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+      state: present
+
+  - name: Install virtualbox
+    package:
+      name: virtualbox
+      state: present

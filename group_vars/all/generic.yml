@@ -1,0 +1,10 @@
+---
+##########################
+# generic
+
+authorized_keys:
+  - "{{ kolla_public_key }}"
+configuration_directory: /opt/configuration
+configure_operator_user: yes
+operator_user: vagrant
+venv_directory: /opt/venv-ansible

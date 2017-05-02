@@ -1,0 +1,10 @@
+---
+##########################
+# betacloud
+
+betacloud_cobbler: no
+betacloud_firewall: no
+betacloud_letsencrypt: no
+betacloud_networking: no
+betacloud_proxy: no
+betacloud_system_hardening: yes

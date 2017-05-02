@@ -1,0 +1,13 @@
+---
+##########################
+# ansible
+
+ansible_ssh_user: vagrant
+ansible_ssh_port: 22
+
+##########################
+# ansible roles
+
+ansible_roles_path: galaxy
+ansible_roles_private:
+  - betacloud.seed

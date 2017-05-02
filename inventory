@@ -1,0 +1,39 @@
+# seed nodes
+[seed]
+ubuntu
+
+# control nodes
+[control]
+ubuntu
+
+# compute nodes
+[compute]
+ubuntu
+
+# storage nodes
+[storage]
+ubuntu
+
+# network nodes
+[network]
+ubuntu
+
+# xenserver hosts
+[xenserver]
+
+# cobbler nodes
+[cobbler:children]
+seed
+
+# elasticsearch nodes
+[elasticsearch:children]
+control
+
+# rabbitmq nodes
+[rabbitmq:children]
+control
+
+# iscsid nodes
+[iscsdi:children]
+compute
+storage

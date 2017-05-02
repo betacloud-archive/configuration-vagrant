@@ -1,0 +1,12 @@
+---
+##########################
+# Public roles
+
+- name: betacloud.configuration
+  src: git+https://github.com/betacloud/ansible-configuration.git
+
+##########################
+# Private roles
+
+- name: betacloud.seed
+  src: galaxy/betacloud.seed.tar.gz
