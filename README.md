@@ -17,8 +17,8 @@ A test and development Vagrant environment for OpenStack Kolla.
   * At least Ansible >= 2.2.0.0 has to be used. Use ``pip`` to install Ansible. The Ansible
     package included in Ubuntu 16.04 is pretty old.
 
-* As an alternative install Ansible e.g. with ``apt-get install -y python-pip; pip install ansible`` and run
-  ``ansible-playbook 000-prepare-vagrant.yml`` to install Vagrant and Virtualbox.
+* As an alternative install Ansible e.g. with ``apt-get install -y python-pip libssl-dev; pip install ansible``
+  and run ``ansible-playbook 000-prepare-vagrant.yml`` to install Vagrant and Virtualbox.
 
 * By default the environment uses 8 VCPUs, 24 GByte memory, and 160 GByte storage.
 
