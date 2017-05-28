@@ -23,6 +23,8 @@
   pre_tasks:
   - name: Include secrets
     include_vars: secrets.yml
+    tags:
+    - kolla
 
   roles:
   - role: betacloud.kolla
