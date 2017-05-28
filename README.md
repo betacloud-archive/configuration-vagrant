@@ -34,6 +34,8 @@ A test and development Vagrant environment for OpenStack Kolla.
 
 ## Deployment
 
+* Prepare the local system for the provisioning of the Vagrant environment.
+
 ```shell
 $ ansible-playbook 000-prepare-localhost.yml
  [WARNING]: provided hosts list is empty, only localhost is available
@@ -67,6 +69,8 @@ ok: [localhost] => (item=betacloud.seed)
 PLAY RECAP *********************************************************************
 localhost                  : ok=7    changed=4    unreachable=0    failed=0
 ```
+
+* Bring up the Vagrant environment.
 
 ```shell
 $ vagrant up --no-provision
@@ -105,6 +109,8 @@ Bringing machine 'ubuntu' up with 'virtualbox' provider...
     ubuntu: /opt/configuration => /root/configuration-vagrant
 ==> ubuntu: Machine not provisioned because `--no-provision` is specified.
 ```
+
+* Provision the Vagrant environment.
 
 ```shell
 $ vagrant provision
