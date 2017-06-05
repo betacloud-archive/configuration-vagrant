@@ -18,10 +18,6 @@
   src: git+https://github.com/betacloud/ansible-docker.git
   version: master
 
-- name: betacloud.letsencrypt
-  src: git+https://github.com/betacloud/ansible-letsencrypt.git
-  version: master
-
 - name: betacloud.proxy
   src: git+https://github.com/betacloud/ansible-proxy.git
   version: master

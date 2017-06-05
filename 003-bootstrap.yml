@@ -90,11 +90,3 @@
   - role: openstack-ansible-security
     when: betacloud_system_hardening|bool
     tags: security
-
-- name: Apply role betacloud.letsencrypt
-  hosts: all:!xenserver
-
-  roles:
-  - role: betacloud.letsencrypt
-    when: betacloud_letsencrypt|bool
-    tags: letsencrypt

@@ -24,7 +24,8 @@
   - name: Include secrets
     include_vars: secrets.yml
     tags:
-    - kolla
+      - ceph
+      - kolla
 
   roles:
   - role: betacloud.kolla
