@@ -5,10 +5,13 @@
   connection: local
   become: true
 
+  vars:
+    vagrant_version: 1.9.5
+
   tasks:
   - name: Install vagrant
-    package:
-      name: vagrant
+    apt:
+      deb: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_x86_64.deb"
       state: present
 
   - name: Add virtualbox repository
