@@ -17,6 +17,9 @@ Vagrant.configure("2") do |config|
       v.memory = 24576
       v.cpus = 8
     end
+    ubuntu.vm.network "private_network", ip: "192.168.50.10", virtualbox__intnet: "internal"
+    ubuntu.vm.network "private_network", ip: "192.168.60.10", virtualbox__intnet: "external"
+    ubuntu.vm.network "private_network", ip: "192.168.70.10", virtualbox__intnet: "storage"
     ubuntu.vm.box = "cbednarski/ubuntu-1604-large"
     ubuntu.vm.hostname = "vagrant-betacloud"
     ubuntu.vm.synced_folder ".", "/opt/configuration"
@@ -29,7 +32,6 @@ Vagrant.configure("2") do |config|
           ansible_os_family: "Debian",
           operator_user: "vagrant"
         }
-#        ansible.raw_arguments = ["--connection=paramiko"]
         ansible.groups = {
           "vagrant" => ["ubuntu"],
           "seed" => ["ubuntu"],
