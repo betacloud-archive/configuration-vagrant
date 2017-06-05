@@ -4,7 +4,18 @@
 
 betacloud_cobbler: no
 betacloud_firewall: no
-betacloud_letsencrypt: no
 betacloud_networking: no
 betacloud_proxy: no
 betacloud_system_hardening: yes
+
+betacloud_management_interface: enp0s8
+
+##########################
+# services
+
+ara_server_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
+flask_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
+jenkins_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
+phpmyadmin_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
+
+phpmyadmin_database_host: 192.168.50.10

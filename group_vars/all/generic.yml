@@ -2,9 +2,17 @@
 ##########################
 # generic
 
+configure_operator_user: yes
+operator_user: vagrant
 authorized_keys:
   - "{{ kolla_public_key }}"
 configuration_directory: /opt/configuration
-configure_operator_user: yes
-operator_user: vagrant
 venv_directory: /opt/venv-ansible
+
+##########################
+# resolvconf
+
+resolvconf_nameserver:
+  - 8.8.8.8
+  - 8.8.4.4
+resolvconf_search: betacloud.xyz

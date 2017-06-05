@@ -1,5 +1,10 @@
 ---
 ##########################
+# kolla
+
+kolla_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9prWc/LI8XeBlCQAIGz1pkdiNTUXGtQSkBXi0PzgBcEnMSWxeRKLXxMMAhzuqXMc05Tbj9sdQtW4N2eDnhdy1CfyvSgWe21Sw580HbcJjURD3xJSLp4UGNp2QYu59KOiWnzLvIPuQFzlBS+9eGTDfvfj1a9wX+E515hh+yUERnJbSWhXfxnqEXXLDb9UL6OTf8HkqyMz06DeMpm47MXk40TDRarWVw7mylSqJ/7fvddVeDFCJiLm7x02vfzGDW3kT/oz3a7avifawtjlutF/4G3P7UaKjNgiiAEfi3Rt+gGPSBO94OknG7xVlchOoAlTH0kzpvZas/c3w0u8SE8MB
+
+##########################
 # openstack
 
 openstack_release: ocata

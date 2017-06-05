@@ -1,7 +1,7 @@
 ---
 # build
 
-build: 20170515
+build: 20170526
 
 # revisions
 aodh_revision: 0
@@ -134,7 +134,7 @@ chrony_tag: "{{ chrony_version }}-{{ chrony_revision }}"
 
 # cinder
 
-cinder_version: "10.0.1"
+cinder_version: "10.0.2"
 
 cinder_volume_image: "betacloud/cinder-volume"
 cinder_volume_tag: "{{ cinder_version }}-{{ cinder_revision }}"
@@ -170,14 +170,14 @@ kubetoolbox_tag: "{{ common_version }}-{{ common_revision }}"
 
 # elasticsearch
 
-elasticsearch_version: "5.3.2"
+elasticsearch_version: "5.4"
 
 elasticsearch_image: "betacloud/elasticsearch"
 elasticsearch_tag: "{{ elasticsearch_version }}-{{ elasticsearch_revision }}"
 
 # fluentd
 
-fluentd_version: "0.14"
+fluentd_version: "2.3"
 
 fluentd_image: "betacloud/fluentd"
 fluentd_tag: "{{ fluentd_version }}-{{ fluentd_revision }}"
@@ -194,7 +194,7 @@ glance_api_tag: "{{ glance_version }}-{{ glance_revision }}"
 
 # gnocchi
 
-gnocchi_version: "3.1.3"
+gnocchi_version: "3.1.4"
 
 gnocchi_api_image: "betacloud/gnocchi-api"
 gnocchi_api_tag: "{{ gnocchi_version }}-{{ gnocchi_revision }}"
@@ -214,7 +214,7 @@ grafana_tag: "{{ grafana_version }}-{{ grafana_revision }}"
 
 # haproxy
 
-haproxy_version: "1.7.5"
+haproxy_version: "1.7"
 
 haproxy_image: "betacloud/haproxy"
 haproxy_tag: "{{ haproxy_version }}-{{ haproxy_revision }}"
@@ -265,7 +265,7 @@ keepalived_tag: "{{ keepalived_version }}-{{ keepalived_revision }}"
 
 # keystone
 
-keystone_version: "11.0.0"
+keystone_version: "11.0.1"
 
 keystone_image: "betacloud/keystone"
 keystone_tag: "{{ keystone_version }}-{{ keystone_revision }}"
@@ -278,7 +278,7 @@ keystone_ssh_tag: "{{ keystone_version }}-{{ keystone_revision }}"
 
 # kibana
 
-kibana_version: "5.3.2"
+kibana_version: "5.4"
 
 kibana_image: "betacloud/kibana"
 kibana_tag: "{{ kibana_version }}-{{ kibana_revision }}"
@@ -295,7 +295,7 @@ magnum_conductor_tag: "{{ magnum_version }}-{{ magnum_revision }}"
 
 # mariadb
 
-mariadb_version: "10.0.30"
+mariadb_version: "10.0"
 
 mariadb_image: "betacloud/mariadb"
 mariadb_tag: "{{ mariadb_version }}-{{ mariadb_revision }}"
@@ -367,7 +367,7 @@ neutron_bgp_dragent_tag: "{{ neutron_version }}-{{ neutron_revision }}"
 
 # nova
 
-nova_version: "15.0.3"
+nova_version: "15.0.4"
 
 nova_libvirt_image: "betacloud/nova-libvirt"
 nova_libvirt_tag: "{{ nova_version }}-{{ nova_revision }}"
@@ -402,14 +402,14 @@ nova_compute_ironic_tag: "{{ nova_version }}-{{ nova_revision }}"
 nova_serialproxy_image: "betacloud/nova-serialproxy"
 nova_serialproxy_tag: "{{ nova_version }}-{{ nova_revision }}"
 
-placement_api_image: "betacloud/placement-api"
+placement_api_image: "betacloud/nova-placement-api"
 placement_api_tag: "{{ nova_version }}-{{ nova_revision }}"
 
 # openvswitch
 
 openvswitch_version: "4.0.1"
 
-openvswitch_db_image: "betacloud/openvswitch-db"
+openvswitch_db_image: "betacloud/openvswitch-db-server"
 openvswitch_db_tag: "{{ openvswitch_version }}-{{ openvswitch_revision }}"
 
 openvswitch_vswitchd_image: "betacloud/openvswitch-vswitchd"
@@ -417,7 +417,7 @@ openvswitch_vswitchd_tag: "{{ openvswitch_version }}-{{ openvswitch_revision }}"
 
 # rabbitmq
 
-rabbitmq_version: "3.6.9"
+rabbitmq_version: "3.6"
 
 rabbitmq_image: "betacloud/rabbitmq"
 rabbitmq_tag: "{{ rabbitmq_version }}-{{ rabbitmq_revision }}"
@@ -428,6 +428,13 @@ rally_version: "0.9.1"
 
 rally_image: "betacloud/rally"
 rally_tag: "{{ rally_version }}-{{ rally_revision }}"
+
+# telegraf
+
+telegraf_version: "4.0.1"
+
+telegraf_image: "betacloud/telegraf"
+telegraf_tag: "{{ telegraf_version }}-{{ telegraf_revision }}"
 
 # tempest
 
