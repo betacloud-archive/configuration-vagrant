@@ -1,7 +1,7 @@
 ---
 # build
 
-build: 20170526
+build: 20170606
 
 # revisions
 aodh_revision: 0
@@ -111,19 +111,6 @@ ceilometer_collector_tag: "{{ ceilometer_version }}-{{ ceilometer_revision }}"
 
 ceilometer_compute_image: "betacloud/ceilometer-compute"
 ceilometer_compute_tag: "{{ ceilometer_version }}-{{ ceilometer_revision }}"
-
-# ceph
-
-ceph_version: "jewel"
-
-ceph_mon_image: "betacloud/ceph-mon"
-ceph_mon_tag: "{{ ceph_version }}-{{ ceph_revision }}"
-
-ceph_osd_image: "betacloud/ceph-osd"
-ceph_osd_tag: "{{ ceph_version }}-{{ ceph_revision }}"
-
-ceph_rgw_image: "betacloud/ceph-rgw"
-ceph_rgw_tag: "{{ ceph_version }}-{{ ceph_revision }}"
 
 # chrony
 
@@ -306,6 +293,19 @@ memcached_version: "4.0.1"
 
 memcached_image: "betacloud/memcached"
 memcached_tag: "{{ memcached_version }}-{{ memcached_revision }}"
+
+# mistral
+
+mistral_version: "4.0.2"
+
+mistral_engine_image: "betacloud/mistral-engine"
+mistral_engine_tag: "{{ mistral_version }}-{{ mistral_revision }}"
+
+mistral_executor_image: "betacloud/mistral-executor"
+mistral_executor_tag: "{{ mistral_version }}-{{ mistral_revision }}"
+
+mistral_api_image: "betacloud/mistral-api"
+mistral_api_tag: "{{ mistral_version }}-{{ mistral_revision }}"
 
 # mongodb
 
