@@ -6,3 +6,11 @@ docker_user: "{{ operator_user }}"
 docker_version: 17.05.0
 docker_configure_storage_driver: yes
 docker_storage_driver: overlay
+
+##########################
+# images
+
+ara_server_docker_image: "registry.betacloud.io/betacloud/ara-server:{{ ara_server_version }}"
+ceph_ansible_docker_image: "registry.betacloud.io/betacloud/ceph-ansible:{{ ceph_ansible_version }}"
+flask_docker_image: "registry.betacloud.io/betacloud/flask-dashboard:{{ flask_version }}"
+kolla_ansible_docker_image: "registry.betacloud.io/betacloud/kolla-ansible:{{ kolla_ansible_version }}"
