@@ -41,8 +41,4 @@ for n in $(seq 1 $NUMBER); do
     fi
 done
 
-# Create dummy network device for neutron
-
-ip l a fake_interface type dummy || true
-
 exit 0
