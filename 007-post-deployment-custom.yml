@@ -4,7 +4,12 @@
 # NO CHANGE OVER THIS LINE
 ###############################################################################
 
-# Customer-specific plays can be placed here.
+- hosts: seed
 
-- hosts: all
-  tasks: []
+  tasks:
+  - name: Create keystone domain for test ldap
+    os_keystone_domain:
+      cloud: vagrant
+      state: present
+      name: testldap
+      description: test ldap domain

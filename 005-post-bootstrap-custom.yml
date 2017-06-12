@@ -4,8 +4,6 @@
 # NO CHANGE OVER THIS LINE
 ###############################################################################
 
-# Customer-specific plays can be placed here.
-
 - name: Apply role betacloud.test-infrastructure
   hosts: seed
 
