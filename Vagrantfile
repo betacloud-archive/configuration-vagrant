@@ -33,6 +33,7 @@ Vagrant.configure("2") do |config|
           ansible_os_family: "Debian",
           operator_user: "vagrant"
         }
+        ansible.raw_arguments = ["--connection=paramiko"]
         ansible.groups = {
           "vagrant" => ["ubuntu"],
           "seed" => ["ubuntu"],
