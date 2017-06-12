@@ -40,7 +40,6 @@ docker_restart_policy_retry: 0
 
 # enable services
 enable_ceilometer: "yes"
-enable_ceph: "yes"
 enable_cinder: "yes"
 enable_heat: "yes"
 
@@ -53,9 +52,6 @@ openstack_region_name: vagrant
 
 # ceilometer
 ceilometer_database_type: mysql
-
-# ceph
-ceph_osd_filesystem: "xfs"
 
 # horizon
 horizon_backend_database: "yes"
