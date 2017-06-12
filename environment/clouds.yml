@@ -1,0 +1,12 @@
+---
+clouds:
+  vagrant:
+    auth:
+      username: admin
+      password: Fmk9qm8KMlSLR9epclg9Z5khWAf03wzu6PfgqBsD
+      project_name: admin
+      auth_url: http://169.254.169.10:5000/v3
+      project_domain_name: default
+      user_domain_name: default
+    verify: false
+    identity_api_version: 3
