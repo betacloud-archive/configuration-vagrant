@@ -18,9 +18,9 @@ Vagrant.configure("2") do |config|
       v.cpus = 8
       v.customize ['modifyvm', :id, '--nictype1', 'virtio']
     end
-    ubuntu.vm.network "private_network", ip: "192.168.50.10", virtualbox__intnet: "internal", nic_type: "virtio"
-    ubuntu.vm.network "private_network", ip: "192.168.60.10", virtualbox__intnet: "external", nic_type: "virtio"
-    ubuntu.vm.network "private_network", ip: "192.168.70.10", virtualbox__intnet: "storage", nic_type: "virtio"
+    ubuntu.vm.network "private_network", ip: "192.168.50.10", nic_type: "virtio"
+    ubuntu.vm.network "private_network", ip: "192.168.60.10", nic_type: "virtio"
+    ubuntu.vm.network "private_network", ip: "192.168.70.10", nic_type: "virtio"
     ubuntu.vm.box = "cbednarski/ubuntu-1604-large"
     ubuntu.vm.hostname = "vagrant-betacloud"
     ubuntu.vm.synced_folder ".", "/opt/configuration"
