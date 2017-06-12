@@ -19,3 +19,10 @@ jenkins_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management
 phpmyadmin_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
 
 phpmyadmin_database_host: 192.168.50.10
+
+##########################
+# test infrastructure
+
+openldap_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
+docker_registry_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
+nfs_server_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
