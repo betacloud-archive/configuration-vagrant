@@ -17,6 +17,20 @@ Vagrant.configure("2") do |config|
       v.memory = 24576
       v.cpus = 8
       v.customize ['modifyvm', :id, '--nictype1', 'virtio']
+      v.customize ['storagectl', :id,
+                   '--name', 'OSD Controller',
+                   '--add', 'scsi']
+      (0..3).each do |d|
+        v.customize ['createhd',
+                     '--filename', "disk-#{d}",
+                     '--size', '50000'] unless File.exist?("disk-#{d}.vdi")
+        v.customize ['storageattach', :id,
+                     '--storagectl', 'OSD Controller',
+                     '--port', 3 + d,
+                     '--device', 0,
+                     '--type', 'hdd',
+                     '--medium', "disk-#{d}.vdi"]
+      end
     end
     ubuntu.vm.network "private_network", ip: "192.168.50.10", nic_type: "virtio"
     ubuntu.vm.network "private_network", ip: "192.168.60.10", nic_type: "virtio"

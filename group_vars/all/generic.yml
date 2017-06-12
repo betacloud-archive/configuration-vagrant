@@ -5,6 +5,7 @@
 configure_operator_user: yes
 operator_user: vagrant
 authorized_keys:
+  - "{{ ceph_public_key }}"
   - "{{ kolla_public_key }}"
 configuration_directory: /opt/configuration
 venv_directory: /opt/venv-ansible
