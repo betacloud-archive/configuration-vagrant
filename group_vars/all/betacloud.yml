@@ -25,4 +25,5 @@ phpmyadmin_database_host: 192.168.50.10
 
 openldap_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
 docker_registry_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
+docker_registry_port: 5001
 nfs_server_host: "{{ hostvars[inventory_hostname]['ansible_' + betacloud_management_interface]['ipv4']['address'] }}"
