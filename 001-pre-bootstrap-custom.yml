@@ -1,12 +1,5 @@
 # This file is subject to the terms and conditions defined in file 'LICENSE',
 # which is part of this repository.
 ---
-- hosts: localhost
-  connection: local
-
-  pre_tasks:
-  - name: Include secrets
-    include_vars: secrets.yml
-
-  roles:
-  - role: betacloud.seed
+- hosts: all
+  tasks: []

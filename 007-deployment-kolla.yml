@@ -8,15 +8,20 @@
 
   tasks:
   - name: Pull required kolla images
-    command: "docker exec -it bc-kolla-ansible ansible-playbook -i /config/inventory -e @/config/globals.yml -e @/config/passwords.yml -e @/config/images.yml -e CONFIG_DIR=/config -e action=pull /usr/local/share/kolla-ansible/ansible/site.yml"
+    command: "docker exec -t bc-kolla-ansible ansible-playbook -i /config/inventory -e @/config/globals.yml -e @/config/passwords.yml -e @/config/images.yml -e CONFIG_DIR=/config -e action=pull /usr/local/share/kolla-ansible/ansible/site.yml"
 
   - name: Deploy infrastructure components
-    command: "docker exec -it bc-kolla-ansible ansible-playbook -i /config/inventory -e @/config/globals.yml -e @/config/passwords.yml -e @/config/images.yml -e CONFIG_DIR=/config -e action=deploy /usr/local/share/kolla-ansible/ansible/{{ item }}.yml"
+    command: "docker exec -t bc-kolla-ansible ansible-playbook -i /config/inventory -e @/config/globals.yml -e @/config/passwords.yml -e @/config/images.yml -e CONFIG_DIR=/config -e action=deploy /usr/local/share/kolla-ansible/ansible/{{ item }}.yml"
     with_items:
-      - common
       - elasticsearch
+      - telegraf
       - haproxy
       - kibana
       - memcached
       - mariadb
       - rabbitmq
+
+  - name: Deploy base openstack components
+    command: "docker exec -t bc-kolla-ansible ansible-playbook -i /config/inventory -e @/config/globals.yml -e @/config/passwords.yml -e @/config/images.yml -e CONFIG_DIR=/config -e action=deploy /usr/local/share/kolla-ansible/ansible/{{ item }}.yml"
+    with_items:
+      - keystone

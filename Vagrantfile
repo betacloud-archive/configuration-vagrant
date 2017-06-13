@@ -1,13 +1,12 @@
 VERBOSE = false
 PLAYBOOKS = [
   "001-pre-bootstrap.yml",
-  "001-pre-bootstrap-custom.yml",
   "002-bootstrap-seed.yml",
   "003-bootstrap.yml",
   "004-bootstrap-kolla.yml",
   "005-prepare-post-bootstrap-custom.yml",
   "005-post-bootstrap-custom.yml",
-  "006-pre-deployment-custom.yml"
+  "007-deployment-kolla.yml"
 ]
 
 Vagrant.configure("2") do |config|
@@ -38,6 +37,8 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.box = "cbednarski/ubuntu-1604-large"
     ubuntu.vm.hostname = "vagrant-betacloud"
     ubuntu.vm.synced_folder ".", "/opt/configuration"
+    ubuntu.vm.synced_folder "/opt/ansible-galaxy", "/opt/ansible-galaxy"
+    ubuntu.vm.synced_folder "/opt/ansible-logs", "/opt/ansible-logs"
     PLAYBOOKS.each do |playbook|
       ubuntu.vm.provision "ansible" do |ansible|
         ansible.verbose = VERBOSE
