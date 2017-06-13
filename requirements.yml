@@ -9,4 +9,4 @@
 # Private roles
 
 - name: betacloud.seed
-  src: galaxy/betacloud.seed.tar.gz
+  src: /opt/ansible-galaxy/betacloud.seed.tar.gz

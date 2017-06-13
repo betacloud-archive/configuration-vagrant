@@ -8,6 +8,6 @@ ansible_ssh_port: 22
 ##########################
 # ansible roles
 
-ansible_roles_path: galaxy
+ansible_roles_path: /opt/ansible-galaxy
 ansible_roles_private:
   - betacloud.seed

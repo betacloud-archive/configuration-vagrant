@@ -3,10 +3,10 @@
 # Private roles
 
 - name: betacloud.bootstrap
-  src: galaxy/betacloud.bootstrap.tar.gz
+  src: /opt/ansible-galaxy/betacloud.bootstrap.tar.gz
 
 - name: betacloud.kolla
-  src: galaxy/betacloud.kolla.tar.gz
+  src: /opt/ansible-galaxy/betacloud.kolla.tar.gz
 
 - name: betacloud.seed
-  src: galaxy/betacloud.seed.tar.gz
+  src: /opt/ansible-galaxy/betacloud.seed.tar.gz
