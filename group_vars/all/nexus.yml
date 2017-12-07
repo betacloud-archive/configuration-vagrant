@@ -1,8 +1,0 @@
----
-##########################
-# nexus
-
-nexus_repository: files
-nexus_roles_repository: ansible
-nexus_roles_version: latest
-nexus_server: nexus.betacloud.io

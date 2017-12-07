@@ -1,5 +1,0 @@
-Host *
-   User vagrant
-   IdentityFile /secrets/id_rsa.kolla
-   StrictHostKeyChecking no
-   UserKnownHostsFile /dev/null

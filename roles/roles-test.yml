@@ -1,7 +1,0 @@
----
-##########################
-# Test roles
-
-- name: betacloud.test-infrastructure
-  src: git+https://github.com/betacloud/ansible-test-infrastructure
-  version: master

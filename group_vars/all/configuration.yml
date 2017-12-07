@@ -1,6 +1,0 @@
----
-##########################
-# configuration
-
-configuration_type: git
-configuration_git_repository: git@github.com:betacloud/configuration-vagrant.git

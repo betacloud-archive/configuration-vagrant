@@ -1,8 +1,0 @@
----
-##########################
-# docker
-
-docker_user: "{{ operator_user }}"
-docker_version: 17.05.0
-docker_configure_storage_driver: yes
-docker_storage_driver: overlay
